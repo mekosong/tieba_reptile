@@ -19,18 +19,13 @@ const s = new Schema({
   type: {
     type: String,
   },
-  user: { // 发帖者
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+  user:{
+    type:String
   },
   likeCount: {
     type: Number,
     default: 0
   },
-  likes: [{
-    type: Schema.Types.ObjectId,
-    ref: 'PostLike'
-  }],
   reportCount: {
     type: Number,
     default: 0
@@ -63,7 +58,7 @@ s.methods.likedAndCommented = async function (user) {
 
 
 
-s.plugin(shared, ['videoKey', 'photoKeys']);
+s.plugin(shared, ['photoKeys']);
 
 s.index({
   type: 1,
