@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const moment = require('moment');
-const config = require('../../config');
-const qiniu = require('../../lib/qiniu');
+const config = require('../../../config/index');
+const qiniu = require('../../../lib/qiniu');
 
 const shared = {
   address: {

@@ -3,9 +3,9 @@ const cheerio = require('cheerio');
 const _l = require('lodash');
 
 
-const config = require('../config');
-const logger = require('../lib/log4js.lib');
-const tools = require('../tools');
+const config = require('../../config/index');
+const logger = require('../../lib/log4js.lib');
+const tools = require('../tools/index');
 
 
 

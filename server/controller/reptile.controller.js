@@ -2,9 +2,9 @@ const request = require('request-promise-native');
 const cheerio = require('cheerio');
 
 
-const config = require('../config');
-const logger = require('../lib/log4js.lib');
-const tools = require('../tools');
+const config = require('../../config/index');
+const logger = require('../../lib/log4js.lib');
+const tools = require('../tools/index');
 
 exports.doNothing = async function(ctx){
   ctx.body={

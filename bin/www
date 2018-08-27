@@ -11,7 +11,7 @@ const http = require('http');
 const path = require('path');
 
 const connectDB = require('../lib/connectDB');
-const index = require('../routes');
+const index = require('../server/routes');
 
 process.env.TZ = 'Asia/Shanghai';
 

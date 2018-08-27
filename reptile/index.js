@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var config = require('../config');
-var chinese_parseInt = require('../tools/chinese-parseint');
-var myAppTools = require('../tools/myAppTools');
+var chinese_parseInt = require('../server/tools/chinese-parseint');
+var myAppTools = require('../server/tools/myAppTools');
 //日志相关
 var log4js = require('log4js');
 //config log
