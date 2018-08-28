@@ -1,6 +1,5 @@
 const schedule = require('node-schedule');
-const doClimbJob = require('./doClimbJob');
-const config = require('../config');
+const doClockIn = require('./doClockIn');
 
 (async () => {
   // *     *     *     *     *     *
@@ -14,9 +13,6 @@ const config = require('../config');
   // └───────────────────────── second (0 - 59, OPTIONAL)
 
 
-  const everySixtySecond = '*/10 * * * * *';
-  const isProduction = (cron) => config.isProduction ? cron : everySixtySecond;
-
-  // 每10秒钟
-  schedule.scheduleJob(isProduction('* */1 * * * *'), doClimbJob);
+  // 每天16点钟签到
+  schedule.scheduleJob('0 * 7,19 * * *', doClockIn);
 })();

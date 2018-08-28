@@ -1,0 +1,14 @@
+{
+  "apps": [
+  {
+    "name": "schedule",
+    "script": "./schedule",
+    "watch": false,
+    "env": {
+      "NODE_ENV": "local"
+    },
+    "node_args": "",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss Z"
+  }
+]
+}
