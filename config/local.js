@@ -28,6 +28,12 @@ module.exports = Object.assign($default, {
         }
       ]
     }
-    ]
+    ],
+  poro:{
+    loginInUrl:'http://poro.ws/auth/login',
+    checkinUrl:'http://poro.ws/user/checkin',
+    user:'账户名',
+    passwd:'密码'
+  }
 });
 
