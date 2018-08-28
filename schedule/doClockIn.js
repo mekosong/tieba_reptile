@@ -1,4 +1,5 @@
 const request = require('request-promise-native');
+const moment = require('moment');
 let config = require('../config');
 
 
@@ -33,7 +34,8 @@ async function doClockIn(){
         'Cookie':sureCookie
       },
     });
-
+    console.log('======================');
+    console.log(moment().format('YYYY-MM-DD HH:mm'));
     console.log(JSON.parse(clock));
 
   }catch (err){
