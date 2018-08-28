@@ -13,6 +13,6 @@ const doClockIn = require('./doClockIn');
   // └───────────────────────── second (0 - 59, OPTIONAL)
 
 
-  // 每天16点钟签到
-  schedule.scheduleJob('0 * 7,19 * * *', doClockIn);
+  // 每隔5个小时签到一次，宁多签不漏签
+  schedule.scheduleJob('0 * */5 * * *', doClockIn);
 })();
