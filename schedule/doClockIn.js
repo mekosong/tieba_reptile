@@ -22,8 +22,6 @@ async function doClockIn(){
 
     let cookieArr = res.headers['set-cookie'];
     let sureCookie = cookieArr.map(one=>one.split(';')[0]).join(';');
-    console.log(sureCookie);
-    console.log(JSON.parse(res.body));
 
     const clock = await request({
       method: 'post',

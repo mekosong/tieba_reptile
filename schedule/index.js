@@ -14,5 +14,5 @@ const doClockIn = require('./doClockIn');
 
 
   // 每隔5个小时签到一次，宁多签不漏签
-  schedule.scheduleJob('0 * */5 * * *', doClockIn);
+  schedule.scheduleJob('* * */5 * * *', doClockIn);
 })();
