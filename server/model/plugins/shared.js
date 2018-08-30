@@ -34,10 +34,7 @@ const shared = {
     maxlength: [20, '昵称不能超过20个字符'],
     trim: true
   },
-  avatarKey: {
-    type: String,
-    default:config.defaults.avatarKey
-  },
+
   photoKeys: [{
     type: String,
     require: [true, '宝贝图片不能为空']

@@ -6,22 +6,6 @@ const fs = require('fs');
  */
 
 module.exports = {
-  /** local 模式 */
-  isLocal: process.env.NODE_ENV === 'local',
-  /** 是否测试环境 */
-  isTest: process.env.NODE_ENV === 'test',
-  /** 是否生产环境 */
-  isProduction: process.env.NODE_ENV === 'production',
-
-
-  /** 各种存放文件夹路径 */
-  paths: {
-    /** 日志 */
-    logs: 'storage/logs',
-    cache: 'storage/cache',
-    adminWeb: 'adminWeb'
-  },
-
   /** MongoDB 连接字符串 */
   db: 'mongodb://localhost:27017/tb_reptile',
 
@@ -40,8 +24,17 @@ module.exports = {
   },
   poro:{
     loginInUrl:'http://poro.ws/auth/login',
-    checkinUrl:'http://poro.ws/user/checkin',
-    user:'账户名',
-    passwd:'密码'
+    checkInUrl:'http://poro.ws/user/checkin',
+    userUrl:"http://poro.ws/user/",
+    accounts:[
+      {
+        email:'账户名',
+        passwd:'密码',
+      },
+      {
+        email:'账户名2',
+        passwd:'密码2',
+      }
+    ]
   }
 };
