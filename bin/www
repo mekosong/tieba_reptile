@@ -6,7 +6,10 @@ const views = require('koa-views');
 const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser');
+const koaBody = require('koa-body');
+
 const devLogger = require('../lib/devLogger.lib');
+const validator = require('../lib/validator.lib');
 const http = require('http');
 const path = require('path');
 
@@ -19,20 +22,23 @@ process
   .on('uncaughtException', (err) => {
     console.log(err)
   });
-(async function(){
+(async function () {
   // error handler
   onerror(app);
 
   await connectDB();
-// middlewares
-  app.use(bodyparser({
-    enableTypes:['json', 'form', 'text']
-  }));
-  app.use(json());
-  app.use(devLogger);
-  app.use(require('koa-static')(path.join(__dirname ,'../public')));
 
-  app.use(views(path.join(__dirname,'../views'), {
+  // 验证器
+  validator(app);
+// middlewares
+  app.use(koaBody({
+    multipart: true
+  }))
+  // app.use(json());
+  app.use(devLogger);
+  app.use(require('koa-static')(path.join(__dirname, '../public')));
+
+  app.use(views(path.join(__dirname, '../views'), {
     extension: 'pug'
   }));
 

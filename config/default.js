@@ -7,7 +7,7 @@ const fs = require('fs');
 
 module.exports = {
   /** MongoDB 连接字符串 */
-  db: 'mongodb://localhost:27017/tb_reptile',
+  db: 'mongodb://127.0.0.1:27018,127.0.0.1:27017/tb_reptile',
 
   /** redis */
   redis: {
